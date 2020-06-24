@@ -13,7 +13,30 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+<build>
+  <plugins>
+  <plugin> <!-- Compiling the code -->
+  		<groupId>org.apache.maven.plugins</groupId>
+  		<artifactId>maven-compiler-plugin</artifactId>
+  		<configuration>
+  		<source>1.6</source>
+  		<target>1.6</target>
+  		</configuration>
+  
+  </plugin>
+  <plugin> <!-- Running the testng xml file -->
+  		<groupId>org.apache.maven.plugins</groupId>
+  		<artifactId>maven-surefire-plugin</artifactId>
+  		 <version>2.19.1</version>
+  		<configuration>
+  			<suiteXmlFiles>
+  				<suiteXmlFile> testng.xml</suiteXmlFile>
+  			</suiteXmlFiles>
+  		</configuration>
+  </plugin>
+  
+  </plugins>
+  </build>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
